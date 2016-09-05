@@ -1,8 +1,8 @@
 # dva
 
 [![NPM version](https://img.shields.io/npm/v/dva.svg?style=flat)](https://npmjs.org/package/dva)
-[![Build Status](https://img.shields.io/travis/sorrycc/dva.svg?style=flat)](https://travis-ci.org/sorrycc/dva)
-[![Coverage Status](https://img.shields.io/coveralls/sorrycc/dva.svg?style=flat)](https://coveralls.io/r/sorrycc/dva)
+[![Build Status](https://img.shields.io/travis/dvajs/dva.svg?style=flat)](https://travis-ci.org/dvajs/dva)
+[![Coverage Status](https://img.shields.io/coveralls/dvajs/dva.svg?style=flat)](https://coveralls.io/r/dvajs/dva)
 [![NPM downloads](http://img.shields.io/npm/dm/dva.svg?style=flat)](https://npmjs.org/package/dva)
 
 Lightweight elm-style framework based on react and redux.
@@ -27,6 +27,7 @@ Lightweight elm-style framework based on react and redux.
 - [subscription 及其适用场景](https://github.com/dvajs/dva/issues/3#issuecomment-229250708)
 - [支付宝前端应用架构的发展和选择: 从 roof 到 redux 再到 dva](https://github.com/sorrycc/blog/issues/6)
 - [从 0 开始实现 react 版本的 hackernews (基于 dva)](https://github.com/sorrycc/blog/issues/9)
+- [使用 create-react-app 开发 dva 应用](https://github.com/dvajs/dva/issues/58#issuecomment-243435470)
 
 ## Features
 
@@ -130,8 +131,9 @@ dva 的插件机制是通过 hooks 实现的，用于添加自定义行为和监
 - `onAction(Array|Function):` 等同于 redux middleware，支持数组
 - `onStateChange(listener):` 绑定 listner，state 变化时触发
 - `onReducer(reducerEnhancer):` 应用全局的 reducer enhancer，比如 [redux-undo](https://github.com/omnidan/redux-undo)
+- `onEffect(Function):` 封装 effect 方法的处理，比如可以实现自动切换 loading 状态
 - `onHmr(render => {}):` 提供 render 方法用于重新渲染 routes 和 components，暂还不支持 model
-- `extraReducers(obj):` 提供额外的 reducers，比如 [redux-form](https://github.com/erikras/redux-form) 需要全局 reducer `form`
+- `extraReducers(Object):` 提供额外的 reducers，比如 [redux-form](https://github.com/erikras/redux-form) 需要全局 reducer `form`
 
 ### `app.model(obj)`
 
